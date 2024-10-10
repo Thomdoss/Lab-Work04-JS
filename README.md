@@ -9,4 +9,4 @@ o Square
 o Rectangle
 
 
-Click to the [link](https://thomdoss.github.io/Lab-Work03-BS5/) to run the website.
+Click to the [link](https://thomdoss.github.io/Lab-Work04-JS/) to run the website.
