@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>Home</title>
+      <link rel="stylesheet" href="css/style.css" />
+   </head>
+   <body>
+      <div class="wrapper">
+         <h1 id="top">Basic Geometry</h1>
+         <p>“In this section, we are going to find the Area of some two-dimension shapes</p>
+
+         <p>You can click on any shape below:</p>
+
+         <ul>
+            <li><a href="#Circle">Circle</a></li>
+            <li><a href="#Triangle">Triangle</a></li>
+            <li><a href="#Square">Square</a></li>
+            <li><a href="#Rectangle">Rectangle</a></li>
+         </ul>
+
+         <section id="Circle">
+            <h2>Circle Area</h2>
+            <div>
+               <label for="radius">Enter the value of the circle's radius:</label>
+               <input type="text" id="radius" />
+            </div>
+            <div>
+               <label>Result:</label>
+               <input type="text" id="Result_Circle" readonly />
+            </div>
+            <button onclick="getCircleArea()">Calculate</button>
+            <hr />
+            <section class="go"><a href="#top">Go to top</a></section>
+         </section>
+
+         <section id="Triangle">
+            <h2>Triangle Area</h2>
+            <div>
+               <label for="base">Enter the value of the triangle's base:</label>
+               <input type="text" id="base" />
+            </div>
+            <div>
+               <label for="base">Enter the value of the triangle's vertical height:</label>
+               <input type="text" id="vertical" />
+            </div>
+            <div>
+               <label>Result:</label>
+               <input type="text" id="Result_Triangle" readonly />
+            </div>
+            <button onclick="getTriangleArea()">Calculate</button>
+            <hr />
+            <section class="go"><a href="#top">Go to top</a></section>
+         </section>
+
+         <section id="Square">
+            <h2>Square Area</h2>
+            <div>
+               <label for="side">Enter the value of the square's side:</label>
+               <input type="text" id="side" />
+            </div>
+            <div>
+               <label>Result:</label>
+               <input type="text" id="Result_Square" readonly />
+            </div>
+            <button onclick="getSquareArea()">Calculate</button>
+            <hr />
+            <section class="go"><a href="#top">Go to top</a></section>
+         </section>
+
+         <section id="Rectangle">
+            <h2>Rectangle Area</h2>
+            <div>
+               <label for="side_hei">Enter the value of the rectangle's vertical height:</label>
+               <input type="text" id="side_hei" />
+            </div>
+            <div>
+               <label for="side_width">Enter the value of the rectangle's horizontal height:</label>
+               <input type="text" id="side_width" />
+            </div>
+
+            <div>
+               <label>Result:</label>
+               <input type="text" id="Result_Rectangle" readonly />
+            </div>
+            <button onclick="getRectangleArea()">Calculate</button>
+            <hr />
+            <section class="go"><a href="#top">Go to top</a></section>
+         </section>
+      </div>
+
+      <script>
+         function getCircleArea() {
+            document.getElementById('Result_Circle').value = '';
+            const radius = document.getElementById('radius').value;
+            const radiusValue = parseFloat(radius); // Convert a text in float
+
+            const Area = radiusValue * radiusValue * 3.1415;
+
+            if (isNaN(radiusValue) || radiusValue <= 0) {
+               alert('Please enter a valid positive number for radius.');
+               return;
+            }
+            document.getElementById('Result_Circle').value = Area.toFixed(2);
+         }
+
+         function getTriangleArea() {
+            document.getElementById('Result_Triangle').value = '';
+            const base = document.getElementById('base').value;
+            const baseValue = parseFloat(base); // Convert a text in float
+
+            const vertical = document.getElementById('vertical').value;
+            const verticalValue = parseFloat(vertical); // Convert a text in float
+
+            const Area = (verticalValue * baseValue) / 2;
+
+            if (isNaN(baseValue) || baseValue <= 0 || isNaN(verticalValue) || verticalValue <= 0) {
+               alert('Please enter valid positive numbers for base and vertical height.');
+               return;
+            }
+            document.getElementById('Result_Triangle').value = Area.toFixed(2);
+         }
+
+         function getSquareArea() {
+            document.getElementById('Result_Square').value = '';
+            const side = document.getElementById('side').value;
+            const sideValue = parseFloat(side); // Convert a text in float
+
+            const Area = sideValue * sideValue;
+
+            if (isNaN(sideValue) || sideValue <= 0) {
+               alert('Please enter a valid positive number for the side.');
+               return;
+            }
+            document.getElementById('Result_Square').value = Area.toFixed(2);
+         }
+
+         function getRectangleArea() {
+            document.getElementById('Result_Rectangle').value = '';
+            const side_width = document.getElementById('side_width').value;
+            const side_widthValue = parseFloat(side_width); // Convert a text in float
+
+            const side_hei = document.getElementById('side_hei').value;
+            const side_heiValue = parseFloat(side_hei); // Convert a text in float
+
+            const Area = side_widthValue * side_heiValue;
+
+            if (
+               isNaN(side_widthValue) ||
+               side_widthValue <= 0 ||
+               isNaN(side_heiValue) ||
+               side_heiValue <= 0
+            ) {
+               alert('Please enter valid positive numbers for width and height.');
+               return;
+            }
+            document.getElementById('Result_Rectangle').value = Area.toFixed(2);
+         }
+      </script>
+
+      <footer>
+         <p>
+            Copyright © 2024 ILAC and EFREI Paris - Created by: Thomas DOS SANTOS - All rights
+            reserved
+         </p>
+      </footer>
+   </body>
+</html>
